@@ -87,16 +87,29 @@ dfcsv.fillna(130, inplace=True)
 print("After filling NaN with 130:\n", dfcsv.to_string(), "\n")
 
 
-# ------------------------------------------------------------
-# 7️⃣  Basic Statistical Operations (Mean, Median, Mode)
+# 7️⃣  Basic Statistical Operations (PANDAS Methods)
 # ------------------------------------------------------------
 
-print("===== Basic Statistics =====")
+print("===== Basic Statistics (Using Pandas) =====")
 
-# Using pandas built-in methods
+# Mean → Average of a column
 print("Mean of 'Calories':", dfdict["Calories"].mean())
+
+# Median → Middle value of sorted column
 print("Median of 'Calories':", dfdict["Calories"].median())
+
+# Mode → Most frequent value(s)
+# Returns a Series, so we take [0] for the first mode value
 print("Mode of 'Calories':", dfdict["Calories"].mode()[0], "\n")
+
+
+# ------------------------------------------------------------
+# 8️⃣  Descriptive Statistics Summary
+# ------------------------------------------------------------
+# describe() gives count, mean, std, min, max, and quartiles
+
+print("Summary Statistics for all numeric columns:\n")
+print(dfdict.describe(), "\n")
 
 # Using numpy (alternative)
 print("Mean (NumPy):", np.mean(dfdict["Pulse"]))
