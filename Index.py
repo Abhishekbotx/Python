@@ -1,3 +1,5 @@
+import numpy as np
+
 print("heloo")
 
 if 5>2:
@@ -20,6 +22,8 @@ for x in fruits:
 
 b = "Hello, World!"
 print(b[2:5]) #this will slice from index 2 to 
+# it will print llo
+
 
 # the trim methlod is actually strip method in pythong
 
@@ -32,10 +36,12 @@ thisdict =	{
 }
 for x in thisdict:
     print(x)
+# this will print only keys--> brand,model,year    
+
+
 
 
 #positive only arguments
-
 
 
 #To specify that a function can have only positional arguments, add , / after the arguments:
@@ -47,6 +53,8 @@ def my_function(x, /):
 my_function(3)
 
 b=[fruits]
+# print(b)
+ 
 
 
 def fruit_salad(fruit):
@@ -79,7 +87,7 @@ class Person:
     self.salary=salary
 
   def __str__(self):
-    return f"{self.name} {self.age} {self.salary}"
+    return f"I am {self.name} age:{self.age} salary:{self.salary}"
 
 
 P1=Person('Abhishek',23,'M',00000)  
@@ -88,17 +96,14 @@ print(P1)
 
 
 # self is just a convention in Python that refers to the instance of the class.
-# It’s like this in JavaScript.
+# It’s like 'this' in JavaScript.
 # When you define a method inside a class, Python automatically passes the object (self) as the first argument when you call the method.
 
 
 # The __str__() Function
 # The __str__() function controls what should be returned when the class object is represented as a string.
-# If the __str__() function is not set, the string representation of the object is returned:
-
 
 "If the __str__() function is not set, the string representation of the object is returned,"
-
 # …it means Python will return the default memory-based representation, which is something like:
 # <__main__.Person object at 0x000001A3B8F739A0>
 
@@ -113,7 +118,7 @@ class Person:
      thisOne.age=age 
 
   def myFunc(per):
-    print('My name is:',per.name,'and i am ',per.age,'young')  
+    print('My name is:',per.name,'and i am ',per.age,'year young')  
 
 human=Person('Abhi',23)     
 
@@ -121,3 +126,11 @@ human.myFunc()
 # del human.age this will dlete the property
 
 print(human.age)
+  
+
+arr=np.array(['aman','lovely','abhishek'])
+
+print(arr)
+print(np.__version__)
+
+# The array object in NumPy is called ndarray, it provides a lot of supporting functions that make working with ndarray very easy.
