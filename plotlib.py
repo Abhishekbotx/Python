@@ -83,7 +83,7 @@ plt.show()
 
 
 
-# 🎫 Subplots Example 2 → 6 different functions in grid layout (2 rows x 3 columns)
+# 🎫 Subplots Example 2 → 6 different functions in grid layout (2 rows x 3 columns) axes
 x = np.linspace(1, 10, 100)
 
 fig, axes = plt.subplots(2, 3)
