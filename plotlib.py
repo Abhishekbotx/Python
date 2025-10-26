@@ -9,7 +9,7 @@ import numpy as np
 # # plt.ylabel('some numbers')
 # plt.show()
 
-
+# 🎫 Simple line plots for Bikes & Cars Price vs Generation
 x=[1,2,3,4,5]
 y1=[10000,20000,30000,40000,50000]
 y2=[20000,40000,60000,80000,120000]
@@ -25,7 +25,7 @@ plt.ylabel("Minimum Price")
 plt.legend(loc="lower right")
 
 
-# try to save file before show coz at time of show it clears the data
+# 🎫Save figure :try to save file before show coz at time of show it clears the data
 plt.savefig("price.png",dpi=1000)
 
 plt.show()
@@ -66,12 +66,12 @@ plt.subplot(3, 1, 3)
 plt.plot(t, t**3, 'g^')
 plt.title('Cubic Subplot')
 
-plt.suptitle('Different functions of t')
+plt.suptitle('Different functions of t') # Common title for all 3
 plt.tight_layout()
 plt.xlabel('t values')
 plt.ylabel('output values')
 
-plt.show()
+# plt.show()
 
 
 
@@ -80,3 +80,43 @@ plt.show()
 plt.savefig('subplot.png')
 plt.show()
 
+
+
+
+# 🎫 Subplots Example 2 → 6 different functions in grid layout (2 rows x 3 columns)
+x = np.linspace(1, 10, 100)
+
+fig, axes = plt.subplots(2, 3)
+
+axes[0,0].plot(x, np.sin(x))
+axes[0,0].set_title('Sin func')
+axes[0,0].set_xlabel('x')
+axes[0,0].set_ylabel('y')
+
+axes[0,1].plot(x, np.cos(x))
+axes[0,1].set_title('Cos func')
+axes[0,1].set_xlabel('x')
+axes[0,1].set_ylabel('y')
+
+axes[0,2].plot(x, np.tan(x))
+axes[0,2].set_title('Tan func')
+axes[0,2].set_xlabel('x')
+axes[0,2].set_ylabel('y')
+
+axes[1,0].plot(x, np.exp(x))
+axes[1,0].set_title('Exp func')
+axes[1,0].set_xlabel('x')
+axes[1,0].set_ylabel('y')
+
+axes[1,1].plot(x, np.sqrt(x))
+axes[1,1].set_title('Sqrt func')
+axes[1,1].set_xlabel('x')
+axes[1,1].set_ylabel('y')
+
+axes[1,2].plot(x, np.log(x))
+axes[1,2].set_title('Log func')
+axes[1,2].set_xlabel('x')
+axes[1,2].set_ylabel('y')
+
+plt.tight_layout()
+plt.show()
