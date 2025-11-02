@@ -28,7 +28,7 @@ plt.legend(loc="lower right")
 # 🎫Save figure :try to save file before show coz at time of show it clears the data
 plt.savefig("price.png",dpi=1000)
 
-plt.show()
+# plt.show()
 
 
 # y=[3, 8, 1, 10]
@@ -78,13 +78,13 @@ plt.ylabel('output values')
 # now here there is 1 fig and in that there is 3 subplot
 
 plt.savefig('subplot.png')
-plt.show()
+# plt.show()
 
 
 
 
 # 🎫 Subplots Example 2 → 6 different functions in grid layout (2 rows x 3 columns) axes
-x = np.linspace(1, 10, 100)
+x = np.linspace(1, 10, 100) # from 1,10 there will be 100 points evenly distributed
 
 fig, axes = plt.subplots(2, 3)
 
@@ -118,5 +118,51 @@ axes[1,2].set_title('Log func')
 axes[1,2].set_xlabel('x')
 axes[1,2].set_ylabel('y')
 
-plt.tight_layout()
+plt.tight_layout() # This makes evenly seperated and space
+# plt.show()
+
+
+
+#Scatter 
+
+xs1=np.random.rand(100)*10
+ys1=np.random.rand(100)*10
+
+plt.scatter(xs1,ys1,c=ys1, cmap='plasma',marker='h',label='random',alpha=0.8)
+plt.legend(loc="lower right")
+plt.grid(True)
+plt.show()
+
+
+
+# Bar chart
+courses = ["HLD", "GENAI", "LLD", "DSA", "PYTHON", "GO"]
+students = [1877, 695, 203, 980, 1203, 1505]
+hatches = ["/", "*", "o", "|", "-", "\\"]
+bar_colors = ['violet', "indigo", "blue", "green", "yellow", "orange"]
+
+bars = plt.bar(courses, students, width=0.5, align="center", edgecolor="black")
+
+for bar, hatch, color in zip(bars, hatches, bar_colors):
+    bar.set_hatch(hatch)
+    bar.set_color(color)
+    bar.set_edgecolor('black')
+
+plt.xlabel("Courses")
+plt.ylabel("Students")
+plt.title("No. of Students Enrolled in Courses")
+plt.show()
+
+
+
+
+#Pie Chart
+
+courses = ['GenAI' , 'HLD', 'HHLD', 'LLD', 'DSA', 'CPP']
+students = [2500, 3000, 3200, 2800, 2700, 1000]
+explode = [0.2, 0, 0, 0, 0, 0]
+pie_colors = ['red', 'blue', 'magenta', 'yellow', 'orange', 'green']
+
+# creating the pie chart by passing values and properties
+plt.pie(students, labels=courses, shadow=True, explode=explode, colors=pie_colors)
 plt.show()
